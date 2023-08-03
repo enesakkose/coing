@@ -1,0 +1,7 @@
+<header class="header">
+  <nav class="navbar">
+    <a class="link" *ngFor="let link of links" [href]="link.path">
+      {{link.label}}
+    </a>
+  </nav>
+</header>

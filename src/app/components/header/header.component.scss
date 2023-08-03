@@ -1,0 +1,27 @@
+@import "src/app/styles/_variables.scss";
+
+.header {
+  background-color: $WHITE-3;
+  border: 1px solid $SECONDARY-800;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  margin-top: 1rem;
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .link {
+        padding: .5rem 1rem;
+        border-radius: 3rem;
+        width: 6rem;
+        text-align: center;
+        transition: 200ms ease-in-out background-color;
+
+        &:hover{
+            background-color: $WHITE-4;
+        }
+    }
+  }
+}

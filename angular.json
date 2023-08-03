@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "coing"
+  "defaultProject": "coing",
+  "cli": {
+    "analytics": "7fda6e46-62f1-4b31-a766-9e422d19229c"
+  }
 }

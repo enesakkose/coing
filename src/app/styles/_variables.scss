@@ -1,0 +1,86 @@
+$PRIMARY-50:  #ffffff;
+$PRIMARY-100: #fafafa;
+$PRIMARY-200: #f5f5f5;
+$PRIMARY-300: #f0f0f0;
+$PRIMARY-400: #dedede;
+$PRIMARY-500: #c2c2c2;
+$PRIMARY-600: #979797;
+$PRIMARY-700: #818181;
+$PRIMARY-800: #606060;
+$PRIMARY-900: #3c3c3c;
+
+$SECONDARY-50:  #f5f5f5;
+$SECONDARY-100: #e9e9e9;
+$SECONDARY-200: #d9d9d9;
+$SECONDARY-300: #c4c4c4;
+$SECONDARY-400: #9d9d9d;
+$SECONDARY-500: #7b7b7b;
+$SECONDARY-600: #555555;
+$SECONDARY-700: #434343;
+$SECONDARY-800: #262626;
+$SECONDARY-900: #090909;
+
+$GREEN-50:  #f6fce6;
+$GREEN-100: #e8f6c1;
+$GREEN-200: #dcff90;
+$GREEN-300: #cbec6e; /**/
+$GREEN-400: #bfe74c;
+$GREEN-500: #b6e22a;
+$GREEN-600: #abd021;
+$GREEN-700: #9cb916;
+$GREEN-800: #8ea20a;
+$GREEN-900: #767b00;
+
+
+$WHITE-1: hsla(0, 0%, 100%, 0);
+$WHITE-2: hsla(0, 0%, 100%, 0.013);
+$WHITE-3: hsla(0, 0%, 100%, 0.034);
+$WHITE-4: hsla(0, 0%, 100%, 0.056);
+$WHITE-5: hsla(0, 0%, 100%, 0.086);
+$WHITE-6: hsla(0, 0%, 100%, 0.124);
+$WHITE-7: hsla(0, 0%, 100%, 0.176);
+$WHITE-8: hsla(0, 0%, 100%, 0.249);
+$WHITE-9: hsla(0, 0%, 100%, 0.386);
+$WHITE-10: hsla(0, 0%, 100%, 0.446);
+$WHITE-11: hsla(0, 0%, 100%, 0.592);
+$WHITE-12: hsla(0, 0%, 100%, 0.923);
+
+$BLACK-1: hsla(0, 0%, 0%, 0.012);
+$BLACK-2: hsla(0, 0%, 0%, 0.027);
+$BLACK-3: hsla(0, 0%, 0%, 0.047);
+$BLACK-4: hsla(0, 0%, 0%, 0.071);
+$BLACK-5: hsla(0, 0%, 0%, 0.090);
+$BLACK-6: hsla(0, 0%, 0%, 0.114);
+$BLACK-7: hsla(0, 0%, 0%, 0.141);
+$BLACK-8: hsla(0, 0%, 0%, 0.220);
+$BLACK-9: hsla(0, 0%, 0%, 0.439);
+$BLACK-10: hsla(0, 0%, 0%, 0.478);
+$BLACK-11: hsla(0, 0%, 0%, 0.565);
+$BLACK-12: hsla(0, 0%, 0%, 1);
+
+//BOX-SHADOW
+$POPOVER-SHADOW: 0 1px 8px 2px rgba(6, 6, 6, 0.41);
+
+//BREAKPOINTS
+$SM: 768px;
+$MD: 1024px;
+$LG: 1280px;
+
+//PADDING
+$P-0: 0;
+$P-1: .25rem;
+$P-2: .5rem;
+$P-3: 1rem;
+$P-4: 1.125rem;
+$P-5: 1.5rem;
+$P-6: 2rem;
+$P-9: 3.5rem;
+
+//MARGIN
+$M-0: 0;
+$M-1: .25rem;
+$M-2: .5rem;
+$M-3: 1rem;
+$M-4: 1.125rem;
+$M-5: 1.5rem;
+$M-6: 2rem;
