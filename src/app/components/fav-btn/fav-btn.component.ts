@@ -16,4 +16,3 @@ export class FavBtnComponent {
     this.snackbarService.showSnackbar(`Coin ${this.isFavorite ? 'removed' : 'added'} your favorites`)
   }
 }
-//After Favorites added implemantation you should edit snackbar component by whether or not in the favorites global state 
