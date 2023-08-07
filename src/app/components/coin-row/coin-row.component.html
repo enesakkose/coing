@@ -1,5 +1,5 @@
 <li class="coinRow">
-  <app-fav-btn class="fav-btn"></app-fav-btn>
+  <app-fav-btn [coin]="coin!" class="fav-btn"></app-fav-btn>
   <a class="rowLink" [routerLink]="['/coin', coin?.uuid]">
     <div class="info">
       <span class="rank">{{ coin?.rank }}</span>

@@ -10,8 +10,8 @@ import { SnackbarState } from 'src/app/state/snackbar/snackbar.state';
 })
 export class SnackBarComponent implements OnInit{
   @Select(SnackbarState.isOpen) isOpen$?: Observable<boolean>
+  @Select(SnackbarState.message) message$?: Observable<string>
 
   ngOnInit(): void {
   }
-
 }

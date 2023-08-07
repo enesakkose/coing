@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CoinService } from 'src/app/services/coin.service';
+import { Select } from '@ngxs/store';
 import { type Coin } from 'src/app/types/coin';
+
 @Component({
   selector: 'app-coins',
   templateUrl: './coins.component.html',
@@ -8,7 +10,7 @@ import { type Coin } from 'src/app/types/coin';
 })
 export class CoinsComponent implements OnInit {
   assets: Coin[] = []
-  
+
   constructor (private coinService: CoinService) {}
 
   getAssets(){

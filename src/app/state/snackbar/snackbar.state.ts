@@ -34,4 +34,8 @@ export class SnackbarState{
   public static isOpen({isOpen}: SnackbarStateModel) {
     return isOpen
   }
+  @Selector()
+  public static message({message}: SnackbarStateModel) {
+    return message
+  }
 }
