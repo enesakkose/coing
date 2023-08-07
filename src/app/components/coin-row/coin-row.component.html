@@ -1,7 +1,7 @@
 <li class="coinRow">
+  <app-fav-btn class="fav-btn"></app-fav-btn>
   <a class="rowLink" [routerLink]="['/coin', coin?.uuid]">
     <div class="info">
-      <app-fav-btn></app-fav-btn>
       <span class="rank">{{ coin?.rank }}</span>
       <img
         src="{{ coin?.iconUrl }}"

@@ -1,17 +1,25 @@
 @import "src/app/styles/_variables.scss";
 
 .coinRow{
+    display: flex;
+    align-items: center;
+    border-radius: 2.25rem;
+    cursor: default;
+    
+    &:hover{
+        background-color: $WHITE-4;
+    }
+
+    .fav-btn{
+        padding-left: 1.5rem;
+    }
+    
     .rowLink{
+        padding: 1rem 2rem;
+        flex: 1;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         align-items: center;
-        padding: 1rem 2rem;
-        border-radius: 2.25rem;
-        cursor: default;
-    
-        &:hover{
-            background-color: $WHITE-4;
-        }
     
         .info{
             display: flex;
