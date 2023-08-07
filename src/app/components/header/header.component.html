@@ -1,7 +1,13 @@
 <header class="header">
   <nav class="navbar">
-    <a class="link" *ngFor="let link of links" [href]="link.path">
-      {{link.label}}
+    <a
+      class="link"
+      *ngFor="let link of links"
+      [routerLink]="link.path"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="active"
+    >
+      {{ link.label }}
     </a>
   </nav>
 </header>

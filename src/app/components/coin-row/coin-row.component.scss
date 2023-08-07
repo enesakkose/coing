@@ -1,0 +1,52 @@
+@import "src/app/styles/_variables.scss";
+
+.coinRow{
+    .rowLink{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        padding: 1rem 2rem;
+        border-radius: 2.25rem;
+        cursor: default;
+    
+        &:hover{
+            background-color: $WHITE-4;
+        }
+    
+        .info{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+    
+            .name{
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+    
+                .shortName{
+                    color: $SECONDARY-600;
+                    font-size: 14px;
+                }
+            }
+        }
+    
+        .price{
+            justify-self: center;
+        }
+    
+        .priceChange{
+            justify-self: center;
+            
+            .rate{
+                &.negative{
+                    color: #ff314a;
+                }
+    
+                &.positive{
+                    color: #07ef74;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,25 @@
+<li class="coinRow">
+  <a class="rowLink" [routerLink]="['/coin', coin?.uuid]">
+    <div class="info">
+      <app-fav-btn></app-fav-btn>
+      <span class="rank">{{ coin?.rank }}</span>
+      <img
+        src="{{ coin?.iconUrl }}"
+        alt="{{ coin?.name }}"
+        width="32"
+        height="32"
+      />
+      <div class="name">
+        <span class="longName">{{ coin?.name }}</span>
+        <span class="shortName">{{ coin?.symbol }} </span>
+      </div>
+    </div>
+    <span class="price">{{ coin?.price! | currencyFormat }} </span>
+    <span class="price"> {{ coin?.marketCap! | currencyFormat }}</span>
+    <div class="priceChange">
+      <span class="rate" [ngClass]="coinChangeRate ? 'negative' : 'positive'">
+        {{ coinChangeRate ? "" : "+" }}{{ coin?.change }}%
+      </span>
+    </div>
+  </a>
+</li>

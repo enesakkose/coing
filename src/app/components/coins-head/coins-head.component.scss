@@ -1,0 +1,20 @@
+@import "src/app/styles/_variables.scss";
+
+.coinHead{
+    display: flex;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    background-color: $WHITE-4;
+    margin-bottom: 1rem;
+
+    .headElement{
+        font-weight: 600;
+        text-decoration: underline;
+        justify-self: center;
+    }
+}

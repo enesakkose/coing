@@ -1,0 +1,18 @@
+@import "src/app/styles/_variables.scss";
+
+.snackBar{
+    padding: 1rem;
+    background-color: $SECONDARY-800;
+    border: 1px solid $GREEN-400;
+    border-radius: 1.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    width: max-content;
+    transform: translate(-50%, -50%);
+
+    .message{
+        color: $SECONDARY-200;
+    }
+}

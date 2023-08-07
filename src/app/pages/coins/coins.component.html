@@ -1,1 +1,4 @@
-<p>coins works!</p>
+<ul class="coinList">
+  <app-coins-head></app-coins-head>
+  <app-coin-row *ngFor="let asset of assets" [coin]="asset"></app-coin-row>
+</ul>
