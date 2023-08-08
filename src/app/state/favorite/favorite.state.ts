@@ -10,15 +10,16 @@ export interface FavoritesStateModal{
 @State<FavoritesStateModal>({
   name: 'favorites',
   defaults: {
-    favorites: []
+    favorites: JSON.parse(localStorage.getItem('favorites')!) || []
   }
 })
 @Injectable()
 export class FavoritesState{
   @Action(AddFavorite)
-  addFavorite({getState, patchState}: StateContext<FavoritesStateModal>, action: AddFavorite) {
+  addFavorite({getState, patchState, setState}: StateContext<FavoritesStateModal>, action: AddFavorite) {
 
     patchState({ favorites: [...getState().favorites, action.coin]})
+    setState({ favorites: [...getState().favorites, action.coin] });
   }
 
   @Action(RemoveFavorite)
