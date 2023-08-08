@@ -19,7 +19,6 @@ export class FavoritesState{
   addFavorite({getState, patchState, setState}: StateContext<FavoritesStateModal>, action: AddFavorite) {
 
     patchState({ favorites: [...getState().favorites, action.coin]})
-    setState({ favorites: [...getState().favorites, action.coin] });
   }
 
   @Action(RemoveFavorite)
