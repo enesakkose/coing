@@ -16,6 +16,7 @@ import { CoinRowComponent } from './components/coin-row/coin-row.component';
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 import { FavBtnComponent } from './components/fav-btn/fav-btn.component';
 import { CoinComponent } from './pages/coin/coin.component';
+import { CoinCardComponent } from './components/coin-card/coin-card.component';
 
 //Services
 import { CoinService } from './services/coin.service';
@@ -39,6 +40,7 @@ import { CurrencyFormatPipe } from './pipes/currency-format.pipe';
     FavBtnComponent,
     SnackBarComponent,
     CoinComponent,
+    CoinCardComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,6 @@ export class FavoritesComponent implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    this.favorites$?.subscribe(e => console.log(e))
+    
   }
 }

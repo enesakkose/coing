@@ -1,0 +1,23 @@
+<a [routerLink]="['/coin', coin?.uuid]" class="coin-card">
+  <div class="coin-info">
+    <img
+      src="{{ coin?.iconUrl }}"
+      alt="{{ coin?.name }}"
+      width="40"
+      height="40"
+    />
+    <span class="coin-name">{{ coin?.symbol }}</span>
+  </div>
+  <span
+    ><i
+      class="fa-solid fa-xl"
+      [ngClass]="
+        coinChangeRate ? 'fa-arrow-down negative' : 'fa-arrow-up positive'
+      "
+    ></i
+  ></span>
+  <span class="price">{{ coin?.price! | currencyFormat }} </span>
+  <span class="rate" [ngClass]="coinChangeRate ? 'negative' : 'positive'">
+    {{ coinChangeRate ? "" : "+" }}{{ coin?.change }}%
+  </span>
+</a>

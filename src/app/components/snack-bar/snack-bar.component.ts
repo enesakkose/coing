@@ -13,5 +13,6 @@ export class SnackBarComponent implements OnInit{
   @Select(SnackbarState.message) message$?: Observable<string>
 
   ngOnInit(): void {
+    this.isOpen$?.subscribe(i => console.log(i))
   }
 }

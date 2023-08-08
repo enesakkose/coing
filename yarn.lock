@@ -1293,6 +1293,13 @@
   resolved "https://registry.npmjs.org/@ngtools/webpack/-/webpack-16.0.6.tgz"
   integrity sha512-F6vDIAPxKqN3m0ABdHiBaf1OPb2dyDR0ABPmImxFoZtRApGjAiwuAHvsrk8aZRwBAC2XobSkemm2C0HpV6F6lw==
 
+"@ngxs/storage-plugin@^3.8.1":
+  version "3.8.1"
+  resolved "https://registry.npmjs.org/@ngxs/storage-plugin/-/storage-plugin-3.8.1.tgz"
+  integrity sha512-bMCPuqURMM2LvSdQ9HAI12wT4liB6NaaJvZy8rlixHjFWqjYKvlFUpR0FLxcDmm2TTz2TBFBnoL0wAkyOHAlGA==
+  dependencies:
+    tslib "^2.2.0"
+
 "@ngxs/store@^3.8.1":
   version "3.8.1"
   resolved "https://registry.npmjs.org/@ngxs/store/-/store-3.8.1.tgz"

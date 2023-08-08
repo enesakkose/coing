@@ -1,0 +1,39 @@
+@import "src/app/styles/_variables.scss";
+
+.coin-card{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2fr 2fr;
+    height: 175px;
+    padding: 0.75rem;
+    border-radius: 1rem;
+    background-color: $WHITE-3;
+    border: 1px solid $SECONDARY-800;
+    transition: 200ms ease-in-out border-color;
+    align-items: center;
+    justify-items: center;
+
+    &:hover {
+        border-color: $SECONDARY-700;
+    }
+
+    .coin-info{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        flex-direction: column;
+
+        .coin-name{
+            font-size: 14px;
+            color: $SECONDARY-600;
+        }
+    }
+
+    .negative{
+        color: #ff314a;
+    }
+
+    .positive{
+        color: #07ef74;
+    }
+}

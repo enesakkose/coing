@@ -1,3 +1,7 @@
 <div class="favorites">
-
+  <ul class="favorites-list">
+  <li *ngFor="let favorite of favorites$ | async">
+    <app-coin-card [coin]="favorite"></app-coin-card>
+  </li>      
+  </ul>
 </div>
