@@ -16,7 +16,7 @@ export interface FavoritesStateModal{
 @Injectable()
 export class FavoritesState{
   @Action(AddFavorite)
-  addFavorite({getState, patchState, setState}: StateContext<FavoritesStateModal>, action: AddFavorite) {
+  addFavorite({getState, patchState}: StateContext<FavoritesStateModal>, action: AddFavorite) {
 
     patchState({ favorites: [...getState().favorites, action.coin]})
   }
