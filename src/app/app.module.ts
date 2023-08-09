@@ -17,6 +17,9 @@ import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 import { FavBtnComponent } from './components/fav-btn/fav-btn.component';
 import { CoinComponent } from './pages/coin/coin.component';
 import { CoinCardComponent } from './components/coin-card/coin-card.component';
+import { NavHeaderComponent } from './components/coin/nav-header/nav-header.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { CoinInfoModalComponent } from './components/modals/coin-info-modal/coin-info-modal.component';
 
 //Services
 import { CoinService } from './services/coin.service';
@@ -25,7 +28,8 @@ import { SnackbarService } from './services/snackbar.service';
 //Pipes
 import { CurrencyFormatPipe } from './pipes/currency-format.pipe';
 
-//States
+//Directives
+import { ClickOutsideDirective } from './directives/click-outside.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +45,10 @@ import { CurrencyFormatPipe } from './pipes/currency-format.pipe';
     SnackBarComponent,
     CoinComponent,
     CoinCardComponent,
+    NavHeaderComponent,
+    ModalComponent,
+    CoinInfoModalComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,

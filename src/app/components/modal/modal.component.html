@@ -1,0 +1,16 @@
+<div *ngIf="isOpen$ | async" class="modal">
+  <div outsideClick (outsideClick)="closeModal()" class="modal-content">
+    <header class="modal-header">
+      <button (click)="closeModal()" class="close-btn">
+        <i class="fa-solid fa-2xl fa-close"></i>
+      </button>
+    </header>
+    <div class="content-main">
+      <ng-container *ngFor="let modal of modals">
+        <ng-container *ngIf="currentModalName === modal.name">
+          <ng-container *ngComponentOutlet="modal.modal"></ng-container>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>

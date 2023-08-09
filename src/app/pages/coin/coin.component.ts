@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CoinService } from 'src/app/services/coin.service';
+import { type Coin } from 'src/app/types/coin';
 
 @Component({
   selector: 'app-coin',
@@ -8,24 +9,22 @@ import { CoinService } from 'src/app/services/coin.service';
   styleUrls: ['./coin.component.scss']
 })
 export class CoinComponent implements OnInit {
-  id: string | null = ''
+  coin!: Coin
 
   constructor(
     private route: ActivatedRoute,
     private coinService: CoinService
   ) {}
 
-  getAssetInfo(){
-    this.coinService.getAsssetInfo(this.id!).subscribe(data => {
-      console.log(data)
+  getAssetInfo(id: string){
+    this.coinService.getAsssetInfo(id).subscribe(data => {
+      this.coin = data.data.coin
     })
   }
 
   ngOnInit(){
-    this.id = this.route.snapshot.paramMap.get('id')
-    this.getAssetInfo()
+    const paramId = this.route.snapshot.paramMap.get('id')
+    this.getAssetInfo(paramId!)
+    console.log(this.coin)
   }
 }
-
-
-//Edit by assetInfo and favorite with global state

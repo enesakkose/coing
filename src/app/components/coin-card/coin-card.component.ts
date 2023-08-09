@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { OpenModal } from 'src/app/state/modal/modal.actions';
+import { Store } from '@ngxs/store';
 import { type Coin } from 'src/app/types/coin';
 
 @Component({
@@ -13,5 +15,11 @@ export class CoinCardComponent implements OnInit{
 
   ngOnInit(): void {
     this.coinChangeRate = this.coin?.change?.includes('-') ? true : false;
+  }
+
+  constructor(private store: Store) {}
+
+  openCoinInfoModal(){
+    this.store.dispatch(new OpenModal('CoinInfoModal'))
   }
 }

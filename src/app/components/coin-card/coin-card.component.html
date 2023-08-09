@@ -1,4 +1,4 @@
-<a [routerLink]="['/coin', coin?.uuid]" class="coin-card">
+<button (click)="openCoinInfoModal()" class="coin-card">
   <div class="coin-info">
     <img
       src="{{ coin?.iconUrl }}"
@@ -16,8 +16,8 @@
       "
     ></i
   ></span>
-  <span class="price">{{ coin?.price! | currencyFormat }} </span>
+  <span class="price">{{ coin.price | currencyFormat }} </span>
   <span class="rate" [ngClass]="coinChangeRate ? 'negative' : 'positive'">
     {{ coinChangeRate ? "" : "+" }}{{ coin?.change }}%
   </span>
-</a>
+</button>

@@ -6,7 +6,7 @@ import {
   HttpHeaders,
   HttpErrorResponse,
 } from '@angular/common/http';
-import { type Coins, Coin } from '../types/coin';
+import { type Coins, BaseCoin } from '../types/coin';
 
 @Injectable({
   providedIn: 'root'
@@ -28,13 +28,13 @@ export class CoinService {
     return this.http.get<Coins>(this.API_URL, {headers})
   }  
   
-  getAsssetInfo(assetId: string): Observable<Coin>{
+  getAsssetInfo(assetId: string): Observable<BaseCoin>{
     const headers = new HttpHeaders({
       'X-RapidAPI-Key': 'a1080941e0msh61eed144007ab0cp10d97ajsn4ed9d98415c8',
       'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
     })
     const ASSET_INFO_URL = `https://coinranking1.p.rapidapi.com/coin/${assetId}?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h`
 
-    return this.http.get<Coin>(ASSET_INFO_URL, {headers})
+    return this.http.get<BaseCoin>(ASSET_INFO_URL, {headers})
   } 
 }

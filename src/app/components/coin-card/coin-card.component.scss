@@ -5,6 +5,7 @@
     grid-template-columns: 2fr 2fr;
     grid-template-rows: 2fr 2fr;
     height: 175px;
+    width: 175px;
     padding: 0.75rem;
     border-radius: 1rem;
     background-color: $WHITE-3;
@@ -12,6 +13,8 @@
     transition: 200ms ease-in-out border-color;
     align-items: center;
     justify-items: center;
+    font-size: 14px;
+    color: $SECONDARY-200;
 
     &:hover {
         border-color: $SECONDARY-700;
@@ -24,7 +27,6 @@
         flex-direction: column;
 
         .coin-name{
-            font-size: 14px;
             color: $SECONDARY-600;
         }
     }

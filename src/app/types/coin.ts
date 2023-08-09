@@ -1,11 +1,20 @@
 export interface Coins {
   status: string
-  data: Data
+  data: CoinData
 }
 
-export interface Data {
+export interface CoinData {
   stats: Stats
   coins: Coin[]
+}
+
+export interface BaseCoin {
+  stats: Stats
+  data: BaseCoinData
+}
+
+export interface BaseCoinData{
+  coin: Coin
 }
 
 export interface Stats {
@@ -46,6 +55,25 @@ export interface Coin {
   hasContent: boolean
   notices: any
   tags: string[]
+}
+
+export interface CoinBase {
+  uuid: string
+  symbol: string
+  name: string
+  color?: string
+  iconUrl: string
+  marketCap: string
+  price: string
+  listedAt: number
+  tier: number
+  change: string
+  rank: number
+  sparkline: string[]
+  lowVolume: boolean
+  coinrankingUrl: string
+  "24hVolume": string
+  btcPrice: string
 }
 
 export interface Link {
