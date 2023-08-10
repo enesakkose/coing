@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from './store.module';
 
@@ -20,16 +20,21 @@ import { CoinCardComponent } from './components/coin-card/coin-card.component';
 import { NavHeaderComponent } from './components/coin/nav-header/nav-header.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { CoinInfoModalComponent } from './components/modals/coin-info-modal/coin-info-modal.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 //Services
 import { CoinService } from './services/coin.service';
 import { SnackbarService } from './services/snackbar.service';
+import { LoadingService } from './services/loading.service';
 
 //Pipes
 import { CurrencyFormatPipe } from './pipes/currency-format.pipe';
 
 //Directives
 import { ClickOutsideDirective } from './directives/click-outside.directive';
+
+//Interceptors
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +53,8 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
     NavHeaderComponent,
     ModalComponent,
     CoinInfoModalComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,13 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
   ],
   providers: [
     CoinService,
-    SnackbarService
+    SnackbarService,
+    LoadingService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent]
 })
