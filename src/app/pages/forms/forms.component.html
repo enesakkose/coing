@@ -67,33 +67,12 @@
         </ng-select>
         <div
           *ngIf="
-            !form.controls.coin?.valid &&
-            (form.controls.coin?.dirty || form.controls.coin?.touched)
+            !form.controls.selectedCoin.valid &&
+            (form.controls.selectedCoin?.dirty || form.controls.selectedCoin.touched)
           "
           class="error-message"
         >
-          Please enter an coin name
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone</label>
-        <input
-          id="phone"
-          autocomplete="off"
-          type="tel"
-          placeholder="Phone"
-          name="phone"
-          [(ngModel)]="coinForm.phone"
-          required
-        />
-        <div
-          *ngIf="
-            !form.controls.phone?.valid &&
-            (form.controls.phone?.dirty || form.controls.phone?.touched)
-          "
-          class="error-message"
-        >
-          Please enter your phone number.
+          Please select a coin
         </div>
       </div>
       <div class="form-group">

@@ -59,7 +59,7 @@
 
             
             &:has(.error-message){
-                input{
+                input, .coin-dropdown{
                     border-color: red;
                 }
                 
