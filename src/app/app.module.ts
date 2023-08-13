@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from './store.module';
+import {NgSelectModule} from '@ng-select/ng-select';
 
 //Components
 import { AppComponent } from './app.component';
@@ -21,6 +23,7 @@ import { NavHeaderComponent } from './components/coin/nav-header/nav-header.comp
 import { ModalComponent } from './components/modal/modal.component';
 import { CoinInfoModalComponent } from './components/modals/coin-info-modal/coin-info-modal.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { SuccesFormInfoComponent } from './components/succes-form-info/succes-form-info.component';
 
 //Services
 import { CoinService } from './services/coin.service';
@@ -54,13 +57,17 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
     ModalComponent,
     CoinInfoModalComponent,
     ClickOutsideDirective,
-    LoadingComponent
+    LoadingComponent,
+    SuccesFormInfoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule
+    StoreModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgSelectModule
   ],
   providers: [
     CoinService,

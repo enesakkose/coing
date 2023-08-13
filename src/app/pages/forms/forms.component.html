@@ -1,1 +1,145 @@
-<p>forms works!</p>
+<section class="forms">
+  <div class="form-container">
+    <form
+      *ngIf="!isSuccess"
+      class="form"
+      #form="ngForm"
+      (ngSubmit)="onSubmit(form)"
+      novalidate
+    >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          autocomplete="off"
+          type="text"
+          placeholder="Name"
+          name="name"
+          [(ngModel)]="coinForm.name"
+          required
+        />
+        <div
+          *ngIf="
+            !form.controls.name.valid &&
+            (form.controls.name?.dirty || form.controls.name?.touched)
+          "
+          class="error-message"
+        >
+          Please enter your name
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="surname">Surname</label>
+        <input
+          id="surname"
+          autocomplete="off"
+          type="text"
+          placeholder="Surname"
+          name="surname"
+          [(ngModel)]="coinForm.surname"
+          required
+        />
+        <div
+          *ngIf="
+            !form.controls.surname?.valid &&
+            (form.controls.surname?.dirty || form.controls.surname?.touched)
+          "
+          class="error-message"
+        >
+          Please enter your surname
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="selectedCoin">Select Coin</label>
+        <ng-select
+          [clearable]="false"
+          autocomplete="off"
+          id="selectedCoin"
+          name="selectedCoin"
+          [(ngModel)]="coinForm.selectedCoin"
+          class="coin-dropdown"
+          required
+        >
+        <ng-option *ngFor="let coin of coins" [value]="coin.name">
+          <img src={{coin.iconUrl}} alt={{coin.name}} width="20" height="20">
+          {{coin.name}}
+        </ng-option>
+        </ng-select>
+        <div
+          *ngIf="
+            !form.controls.coin?.valid &&
+            (form.controls.coin?.dirty || form.controls.coin?.touched)
+          "
+          class="error-message"
+        >
+          Please enter an coin name
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input
+          id="phone"
+          autocomplete="off"
+          type="tel"
+          placeholder="Phone"
+          name="phone"
+          [(ngModel)]="coinForm.phone"
+          required
+        />
+        <div
+          *ngIf="
+            !form.controls.phone?.valid &&
+            (form.controls.phone?.dirty || form.controls.phone?.touched)
+          "
+          class="error-message"
+        >
+          Please enter your phone number.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          autocomplete="off"
+          type="email"
+          placeholder="Email"
+          name="email"
+          [(ngModel)]="coinForm.email"
+          required
+        />
+        <div
+          *ngIf="
+            !form.controls.email?.valid &&
+            (form.controls.email?.dirty || form.controls.email?.touched)
+          "
+          class="error-message"
+        >
+          Please enter a valid email address.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Request</label>
+        <textarea
+          placeholder="Please enter your request"
+          name="request"
+          [(ngModel)]="coinForm.request"
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        [disabled]="!form.valid || isSending"
+        class="submit-btn"
+      >
+        {{ isSending ? "Sending" : "Submit" }}
+      </button>
+    </form>
+    <app-succes-form-info
+      *ngIf="isSuccess"
+      [infoText]="'Your request form sent. Thank you.'"
+    >
+      <button class="submit-btn" (click)="getNewForm()">
+        New Form Request
+      </button>
+    </app-succes-form-info>
+  </div>
+</section>
