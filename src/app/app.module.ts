@@ -24,6 +24,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { CoinInfoModalComponent } from './components/modals/coin-info-modal/coin-info-modal.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { SuccesFormInfoComponent } from './components/succes-form-info/succes-form-info.component';
+import { AuthComponent } from './pages/auth/auth.component';
 
 //Services
 import { CoinService } from './services/coin.service';
@@ -59,6 +60,7 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
     ClickOutsideDirective,
     LoadingComponent,
     SuccesFormInfoComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { CoinsComponent } from './pages/coins/coins.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { FormsComponent } from './pages/forms/forms.component';
 import { CoinComponent } from './pages/coin/coin.component';
+import { AuthComponent } from './pages/auth/auth.component';
 
 const routes: Routes = [
   { path: '', component: CoinsComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'list', component: ListComponent },
   { path: 'forms', component: FormsComponent },
   { path: 'coin/:id', component: CoinComponent },
+  { path: 'auth', component: AuthComponent}
 ];
 
 @NgModule({

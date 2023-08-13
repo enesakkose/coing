@@ -1,0 +1,68 @@
+@import "src/app/styles/_variables.scss";
+
+.auth-section{
+    height: calc(100vh - 128px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .auth-form{
+        width: 25rem;
+        border-radius: 1.5rem;
+        padding: 2rem;
+        background-color: $WHITE-4;
+        border: 1px solid $SECONDARY-600;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+
+            
+            input{
+                background-color: transparent;
+                border: 1px solid $SECONDARY-600;
+                border-radius: 1.5rem;
+                padding: 1rem;
+                outline: 0;
+                color: $SECONDARY-200;
+                resize: none;
+                
+                &:focus{
+                    border-color: $SECONDARY-500;
+                }
+            }
+
+            input{
+                height: 48px;
+            }
+
+            
+            &:has(.error-message){
+                input, .coin-dropdown{
+                    border-color: red;
+                }
+                
+                .error-message{
+                    color: red;
+                }
+            }
+        }
+        
+    }
+    
+    .submit-btn{
+        height: 48px;
+        border-radius: 1.5rem;
+        width: 100%;
+        background-color: $GREEN-400;
+        color: $SECONDARY-900;
+        
+        &[disabled]{
+            opacity: .5;
+        }
+    }
+}

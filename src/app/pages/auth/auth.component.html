@@ -1,0 +1,42 @@
+<section class="auth-section">
+  <form class="auth-form" novalidate (ngSubmit)="onSubmit()" [formGroup]="user">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        id="username"
+        type="text"
+        placeholder="Username"
+        formControlName="username"
+      />
+      <div
+        class="error-message"
+        *ngIf="
+          user.get('username').hasError('required') &&
+          user.get('username').touched
+        "
+      >
+        Please enter your username
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <div
+        class="error-message"
+        *ngIf="
+          user.get('password').hasError('minlength') && user.get('password').touched
+        "
+      >
+        Minimum of 3 characters
+      </div>
+    </div>
+    <button type="submit" [disabled]="user.invalid || isSending" class="submit-btn">
+      Login
+    </button>
+  </form>
+</section>
