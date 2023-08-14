@@ -1,4 +1,5 @@
 <header class="header">
+  <div></div>
   <nav class="navbar">
     <a
       class="link"
@@ -10,4 +11,7 @@
       {{ link.label }}
     </a>
   </nav>
+  <button *ngIf="user$ | async" (click)="logout()" [disabled]="isLogout" class="logout-btn">
+    Logout
+  </button>
 </header>

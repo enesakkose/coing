@@ -31,4 +31,9 @@ export class AuthState{
     return user
   }
 
+  @Selector()
+  public static username({username}: AuthStateModel){
+    return username
+  }
+
 }

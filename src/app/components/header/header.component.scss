@@ -1,32 +1,47 @@
 @import "src/app/styles/_variables.scss";
 
 .header {
-    background-color: $WHITE-3;
-    border: 1px solid $SECONDARY-800;
-    padding: .5rem;
-    border-radius: 1.5rem;
-    width: max-content;
-    margin: 1rem auto;
-    height: 3rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
 
+    
     .navbar {
         display: flex;
         align-items: center;
         gap: .75rem;
         justify-content: space-around;
+        background-color: $WHITE-3;
+        border: 1px solid $SECONDARY-800;
+        padding: .5rem;
+        border-radius: 1.5rem;
+        width: max-content;
+        margin: 1rem auto;
+        height: 3rem;
 
-    .link {
-        padding: .5rem 1rem;
-        border-radius: 3rem;
-        width: 6rem;
-        text-align: center;
-        transition: 200ms ease-in-out background-color;
+        .link {
+            padding: .5rem 1rem;
+            border-radius: 3rem;
+            width: 6rem;
+            text-align: center;
+            transition: 200ms ease-in-out background-color;
 
-        &:hover, &.active{
-            background-color: $WHITE-4;
+            &:hover, &.active{
+                background-color: $WHITE-4;
+            }
         }
     }
+
+    .logout-btn{
+        height: 32px;
+        background-color: $GREEN-400;
+        width: 100%;
+        border-radius: 1rem;
+        width: 100px;
+        justify-self: flex-end;
+
+        &[disabled]{
+            opacity: .5;
+        }
     }
 }
