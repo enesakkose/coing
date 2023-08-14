@@ -7,13 +7,14 @@ import { FormsComponent } from './pages/forms/forms.component';
 import { CoinComponent } from './pages/coin/coin.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { AuthGuard } from './services/auth.guard';
+import { CoinResolver } from './resolvers/coin-resolver.resolver';
 
 const routes: Routes = [
   { path: '', component: CoinsComponent },
   { path: 'favorites', component: FavoritesComponent, canActivate: [AuthGuard] },
   { path: 'list', component: ListComponent },
   { path: 'forms', component: FormsComponent },
-  { path: 'coin/:id', component: CoinComponent },
+  { path: 'coin/:id', component: CoinComponent, resolve: { coin: CoinResolver } },
   { path: 'auth', component: AuthComponent}
 ];
 

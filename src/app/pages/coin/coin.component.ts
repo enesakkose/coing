@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CoinService } from 'src/app/services/coin.service';
+import { Subscription } from 'rxjs';
 import { type Coin } from 'src/app/types/coin';
 
 @Component({
@@ -8,23 +9,30 @@ import { type Coin } from 'src/app/types/coin';
   templateUrl: './coin.component.html',
   styleUrls: ['./coin.component.scss']
 })
-export class CoinComponent implements OnInit {
+export class CoinComponent implements OnInit, OnDestroy {
   coin!: Coin
+
+  private coinSubscription: Subscription
 
   constructor(
     private route: ActivatedRoute,
     private coinService: CoinService
   ) {}
 
-  getAssetInfo(id: string){
-    this.coinService.getAsssetInfo(id).subscribe(data => {
-      this.coin = data.data.coin
-    })
+  getAssetInfo(){
+
+    this.coinSubscription = this.route.data.subscribe((data) => {
+      this.coin = data.coin.data.coin
+  });
   }
 
   ngOnInit(){
-    const paramId = this.route.snapshot.paramMap.get('id')
-    this.getAssetInfo(paramId!)
-    console.log(this.coin)
+    this.getAssetInfo()
+  }
+
+  ngOnDestroy() {
+    if (this.coinSubscription) {
+        this.coinSubscription.unsubscribe();
+    }
   }
 }
