@@ -6,10 +6,11 @@ import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { FormsComponent } from './pages/forms/forms.component';
 import { CoinComponent } from './pages/coin/coin.component';
 import { AuthComponent } from './pages/auth/auth.component';
+import { authGuard } from './services/authGuard';
 
 const routes: Routes = [
   { path: '', component: CoinsComponent },
-  { path: 'favorites', component: FavoritesComponent },
+  { path: 'favorites', component: FavoritesComponent, canActivate: [authGuard] },
   { path: 'list', component: ListComponent },
   { path: 'forms', component: FormsComponent },
   { path: 'coin/:id', component: CoinComponent },

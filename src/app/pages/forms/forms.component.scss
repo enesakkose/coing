@@ -9,7 +9,6 @@
     .form-container{
         width: 25rem;
         border-radius: 1.5rem;
-        height: 100%;
         padding: 2rem;
         background-color: $WHITE-4;
         border: 1px solid $SECONDARY-600;
@@ -18,8 +17,7 @@
     .form{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
+        gap: 1rem;
 
         .form-group{
             display: flex;

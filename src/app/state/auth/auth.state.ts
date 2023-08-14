@@ -11,7 +11,7 @@ export interface AuthStateModel{
   name: 'auth',
   defaults:{
     user: false,
-    username: ''
+    username: null
   }
 })
 @Injectable()
@@ -27,7 +27,7 @@ export class AuthState{
   }
 
   @Selector()
-  public static user(user: AuthStateModel){
+  public static auth({user}: AuthStateModel){
     return user
   }
 
