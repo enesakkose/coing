@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CoinService } from 'src/app/services/coin.service';
-import { Select } from '@ngxs/store';
 import { type Coin } from 'src/app/types/coin';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-coins',
@@ -9,17 +8,11 @@ import { type Coin } from 'src/app/types/coin';
   styleUrls: ['./coins.component.scss']
 })
 export class CoinsComponent implements OnInit {
-  assets: Coin[] = []
-
-  constructor (private coinService: CoinService) {}
-
-  getAssets(){
-    this.coinService.getAssets().subscribe(data => {
-      this.assets = data.data.coins
-    })
-  }
+  assets: Coin[]
+  
+  constructor (private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.getAssets()
+    this.assets = this.route.snapshot.data.coin[0].coins.data.coins
   }
 }

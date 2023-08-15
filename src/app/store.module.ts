@@ -4,6 +4,7 @@ import { SnackbarState } from './state/snackbar/snackbar.state';
 import { FavoritesState } from './state/favorite/favorite.state';
 import { ModalState } from './state/modal/modal.state';
 import { AuthState } from './state/auth/auth.state';
+import { CoinsState } from './state/coins/coins.state';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
       SnackbarState,
       FavoritesState,
       ModalState,
-      AuthState
+      AuthState,
+      CoinsState
     ]),
     NgxsStoragePluginModule.forRoot({
       key: ['favorites', 'auth']

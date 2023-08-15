@@ -4,7 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from './store.module';
-import {NgSelectModule} from '@ng-select/ng-select';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 //Components
 import { AppComponent } from './app.component';
@@ -25,6 +25,8 @@ import { CoinInfoModalComponent } from './components/modals/coin-info-modal/coin
 import { LoadingComponent } from './components/loading/loading.component';
 import { SuccesFormInfoComponent } from './components/succes-form-info/succes-form-info.component';
 import { AuthComponent } from './pages/auth/auth.component';
+import { NgChartsModule } from 'ng2-charts';
+import { CoinChartComponent } from './components/coin-chart/coin-chart.component';
 
 //Services
 import { CoinService } from './services/coin.service';
@@ -61,6 +63,7 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
     LoadingComponent,
     SuccesFormInfoComponent,
     AuthComponent,
+    CoinChartComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +72,8 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
     StoreModule,
     ReactiveFormsModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    NgChartsModule
   ],
   providers: [
     CoinService,
@@ -81,6 +85,6 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
       multi: true,
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

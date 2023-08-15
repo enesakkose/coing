@@ -8,13 +8,14 @@ import { CoinComponent } from './pages/coin/coin.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { AuthGuard } from './services/auth.guard';
 import { CoinResolver } from './resolvers/coin-resolver.resolver';
+import { CoinInfoResolver } from './resolvers/coin-info.resolver';
 
 const routes: Routes = [
-  { path: '', component: CoinsComponent },
+  { path: '', component: CoinsComponent , resolve: { coin: CoinResolver }},
   { path: 'favorites', component: FavoritesComponent, canActivate: [AuthGuard] },
   { path: 'list', component: ListComponent },
   { path: 'forms', component: FormsComponent },
-  { path: 'coin/:id', component: CoinComponent, resolve: { coin: CoinResolver } },
+  { path: 'coin/:id', component: CoinComponent, resolve: { c: CoinInfoResolver } },
   { path: 'auth', component: AuthComponent}
 ];
 
